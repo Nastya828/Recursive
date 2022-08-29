@@ -1,11 +1,11 @@
 package s01;
 
-//возведение числа N в степень M;
+//1. возведение числа N в степень M;
 public class Task1 {
     public static void main(String[] args) {
 
-        int N = 6;
-        int M = 0;
+        int N = -2;
+        int M = 5;
 
         System.out.println(multiRecursive(N, M));
 

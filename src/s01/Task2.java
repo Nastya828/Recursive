@@ -3,7 +3,7 @@ package s01;
 //2. вычисление суммы цифр числа;
 public class Task2 {
     public static void main(String[] args) {
-        int digit = 12003;
+        int digit = 1234;
         System.out.println(sumRecurs(digit));
     }
 

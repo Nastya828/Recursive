@@ -3,7 +3,7 @@ package s01;
 import java.util.LinkedList;
 
 
-//расчёт длины списка, для которого разрешена только одна операция удаления первого элемента pop(0);
+//3. расчёт длины списка, для которого разрешена только одна операция удаления первого элемента pop(0);
 public class Task3 {
     public static void main(String[] args) {
         LinkedList<Integer> numbers = new LinkedList<>();
