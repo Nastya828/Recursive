@@ -4,8 +4,8 @@ package s01;
 public class Task1 {
     public static void main(String[] args) {
 
-        int N = 2;
-        int M = 10;
+        int N = 6;
+        int M = 0;
 
         System.out.println(multiRecursive(N, M));
 
