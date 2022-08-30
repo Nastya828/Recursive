@@ -6,7 +6,7 @@ import java.util.LinkedList;
 public class Task5 {
     public static void main(String[] args) {
         LinkedList<Integer> numbers = new LinkedList<>();
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i <= 20; i++) {
             numbers.add(i);
         }
         printEvenNumbers(numbers);
@@ -18,10 +18,12 @@ public class Task5 {
             return;
         }
         if (numbers.peek() % 2 == 0) {
-            System.out.print(numbers.pop() + " ");
-        } else {
-            numbers.pop();
+            System.out.print(numbers.peek() + " ");
         }
+        numbers.pop();
+//        } else {
+//            numbers.pop();
+//        }
         printEvenNumbers(numbers);
     }
 
