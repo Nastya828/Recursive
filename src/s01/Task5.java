@@ -21,9 +21,7 @@ public class Task5 {
             System.out.print(numbers.peek() + " ");
         }
         numbers.pop();
-//        } else {
-//            numbers.pop();
-//        }
+
         printEvenNumbers(numbers);
     }
 
