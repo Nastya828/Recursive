@@ -17,11 +17,11 @@ public class Task5 {
         if (numbers.isEmpty()) {
             return;
         }
-        if (numbers.peek() % 2 == 0) {
-            System.out.print(numbers.peek() + " ");
-        }
-        numbers.pop();
+        int nextValue = numbers.pop();
 
+        if (nextValue % 2 == 0) {
+            System.out.print(nextValue + " ");
+        }
         printEvenNumbers(numbers);
     }
 

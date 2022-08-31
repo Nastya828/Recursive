@@ -6,42 +6,42 @@ import java.util.List;
 //7. нахождение второго максимального числа в списке
 // (с учётом, что максимальных может быть несколько, если они равны);
 public class Task7 {
-    static Integer maxFirst;
-    static Integer maxSecond;
 
 
     public static void main(String[] args) {
         List<Integer> numbersList = new ArrayList<>();
-        numbersList.add(4);
-        for (int i = 0; i < 16; i++) {
-            numbersList.add(5);
+        numbersList.add(25);
+        for (int i = 0; i < 18; i++) {
+            numbersList.add(i);
         }
-        numbersList.add(4);
+
+
 
         System.out.println(numbersList);
-        maxFirst = Math.max(numbersList.get(0), numbersList.get(1));
-        maxSecond = Math.min(numbersList.get(0), numbersList.get(1));
-        System.out.println("result =  " + searchSecondMax(numbersList));
+        System.out.println("result =  " + searchSecondMax(numbersList, 0, 0, 0));
     }
 
-    static Integer searchSecondMax(List<Integer> inputList) {
+    static Integer searchSecondMax(List<Integer> inputList, int index, int max, int maxSecond) {
 
-        if (inputList.isEmpty()) {
-            return null;
+        if (index >= inputList.size()) {
+            return maxSecond;
         }
-        boolean changeBoth = inputList.get(0) > maxFirst;
-        boolean changeSecond = inputList.get(0) < maxFirst &&
-                (inputList.get(0) > maxSecond || maxSecond.equals(maxFirst));
+        if (index == 0) {
+            max = inputList.get(index);
+            maxSecond = inputList.get(index);
 
-        if (changeBoth) {
-            maxSecond = maxFirst;
-            maxFirst = inputList.get(0);
-        } else if (changeSecond) {
-            maxSecond = inputList.get(0);
+        }
+        if (inputList.get(index) > max) {
+            maxSecond = max;
+            max = inputList.get(index);
+
+        }
+        if ((inputList.get(index) < max) && (inputList.get(index) > maxSecond || maxSecond == max)) {
+            maxSecond = inputList.get(index);
+
         }
 
-        searchSecondMax(inputList.subList(1, inputList.size()));
+        return searchSecondMax(inputList, index + 1, max, maxSecond);
 
-        return maxSecond;
     }
 }
