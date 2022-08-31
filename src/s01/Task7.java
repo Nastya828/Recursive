@@ -11,6 +11,7 @@ public class Task7 {
     public static void main(String[] args) {
         List<Integer> numbersList = new ArrayList<>();
         numbersList.add(57);
+        numbersList.add(57);
         for (int i = 0; i < 18; i++) {
             numbersList.add(i);
         }
@@ -20,9 +21,21 @@ public class Task7 {
     }
 
     static Integer searchSecondMax(List<Integer> inputList) {
-        int max = Math.max(inputList.get(0), inputList.get(1));
+        int max;
+        int maxSecond;
+        if (inputList.size() < 2) {
+            return null;
+        }
+        if (inputList.get(0) > inputList.get(1)) {
+            max = inputList.get(0);
+            maxSecond = inputList.get(1);
+        } else {
+            max = inputList.get(1);
+            maxSecond = inputList.get(0);
+        }
+
         int index = 0;
-        return initParam(max, max, index, inputList);
+        return initParam(max, maxSecond, index, inputList);
     }
 
 
@@ -43,7 +56,6 @@ public class Task7 {
 
         return initParam(max, maxSecond, index + 1, inputList);
     }
-
 
 
 }
