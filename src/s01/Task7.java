@@ -10,21 +10,23 @@ public class Task7 {
 
     public static void main(String[] args) {
         List<Integer> numbersList = new ArrayList<>();
-        numbersList.add(5);
+        numbersList.add(57);
         for (int i = 0; i < 18; i++) {
-            numbersList.add(7);
+            numbersList.add(i);
         }
 
         System.out.println(numbersList);
+        System.out.println("result =  " + searchSecondMax(numbersList));
+    }
 
-        int max = Math.max(numbersList.get(0), numbersList.get(1));
-
-        System.out.println("result =  " + searchSecondMax(numbersList, 0, max, max));
+    static Integer searchSecondMax(List<Integer> inputList) {
+        int max = Math.max(inputList.get(0), inputList.get(1));
+        int index = 0;
+        return initParam(max, max, index, inputList);
     }
 
 
-    static Integer searchSecondMax(List<Integer> inputList, int index, int max, int maxSecond) {
-
+    static Integer initParam(int max, int maxSecond, int index, List<Integer> inputList) {
         if (index >= inputList.size()) {
             return maxSecond;
         }
@@ -39,7 +41,9 @@ public class Task7 {
 
         }
 
-        return searchSecondMax(inputList, index + 1, max, maxSecond);
-
+        return initParam(max, maxSecond, index + 1, inputList);
     }
+
+
+
 }
